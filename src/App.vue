@@ -34,8 +34,5 @@
     text-align center
     color #2c3e50
     margin-top 60px
-    .header-wrapper{
-      /*margin-bottom 1px*/
-    }
   }
 </style>
