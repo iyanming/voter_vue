@@ -1,21 +1,18 @@
 <template>
 
   <div class="header">
-    <Menu mode="horizontal" :theme="theme1" active-name="1" @on-select="handleSelect" v-if="login">
+    <Menu mode="horizontal" :theme="theme1" active-name="1" @on-select="handleSelect" v-if="login===true">
       <Menu-item name="slider">
         <Icon type="ios-paper"></Icon>
         GO TO Slider
-
       </Menu-item>
       <Menu-item name="hello">
         <Icon type="ios-people"></Icon>
         GO TO Hello
-
       </Menu-item>
       <Menu-item name="3">
         <Icon type="settings"></Icon>
         不知道去哪
-
       </Menu-item>
     </Menu>
     <Menu mode="horizontal" :theme="theme1" active-name="1" @on-select="handleSelect" v-else>
