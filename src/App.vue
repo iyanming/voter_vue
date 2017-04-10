@@ -2,6 +2,7 @@
   <div id="app">
     <!--<img src="./assets/logo.png">-->
     <div class="header-wrapper cls">
+      <div @click="change">.</div>
       <VHeader :login="login"></VHeader>
     </div>
     <router-view></router-view>
@@ -19,6 +20,11 @@
     },
     components: {
       VHeader
+    },
+    methods: {
+      change() {
+        this.login = !this.login
+      }
     }
   }
 </script>

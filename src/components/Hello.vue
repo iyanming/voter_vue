@@ -1,53 +1,59 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">tesafkjfdfd</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-      <br>
-      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+  <div class="slider">
+    <Carousel autoplay v-model="value2" class="v-slider">
+      <Carousel-item>
+        <div class="demo-carousel">
+          <img src="./plugin/slider/banner01.png" alt="">
+        </div>
+      </Carousel-item>
+      <Carousel-item>
+        <div class="demo-carousel">
+          <img src="./plugin/slider/banner02.png" alt="">
+        </div>
+      </Carousel-item>
+      <Carousel-item>
+        <div class="demo-carousel">
+          <img src="./plugin/slider/banner03.png" alt="">
+        </div>
+      </Carousel-item>
+    </Carousel>
+    <div id="vote" >
+      <Button type="primary" id="vote_button" shape="circle" @click="handleSelect('poll')">发起投票</Button>
+    </div>
   </div>
 </template>
-
 <script>
 export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      value2: 0
+    }
+  },
+  methods: {
+    handleSelect (path) {
+      console.log('1')
+      this.$nextTick(() => {
+        this.$router.push(path)
+      })
     }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
+<style scoped lang="stylus" rel="stylesheet/stylus">
+  .hello{
+    img{
+      width 1500px
+      height 500px
+    }
+  }
+  #vote_button{
+    width:400px;
+    height:50px;}
+  #vote{position:relative;
+    top:30px;
+    margin-bottom:50px;
+  }
 </style>

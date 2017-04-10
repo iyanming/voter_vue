@@ -31,8 +31,8 @@
 <style scoped lang="stylus" rel="stylesheet/stylus">
   .slider{
     img{
-      width 100%
-      height 100%
+      width 1500px
+      height 500px
     }
   }
 </style>

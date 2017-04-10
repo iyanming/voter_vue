@@ -88,5 +88,9 @@
     max-width 50%
     margin 0 auto
     padding-top 100px
+    width:700px;
+    height:350px;
+    background:#f5f7f9;
+    border:2px solid #d7dde4;
   }
 </style>
