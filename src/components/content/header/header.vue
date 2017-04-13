@@ -106,7 +106,7 @@
     float:right;
   }
   .bar{float:left;}
-  .bar img{height:100px;}
+  .bar img{height:80px;}
   .body{margin-top:-50px;}
   .logo-text{ margin-left: 5px;
     display: inline-block;

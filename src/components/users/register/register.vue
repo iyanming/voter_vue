@@ -1,7 +1,7 @@
 <template>
   <div class="register">
     <Form ref="formCustom" :model="formCustom" :rules="ruleCustom" :label-width="80">
-      <Form-item label="用户" prop="user">
+      <Form-item label="用户名" prop="user">
         <Input type="text" v-model="formCustom.user"></Input>
       </Form-item>
       <Form-item label="密码" prop="passwd">
@@ -10,12 +10,20 @@
       <Form-item label="确认密码" prop="passwdCheck">
         <Input type="password" v-model="formCustom.passwdCheck"></Input>
       </Form-item>
-      <Form-item>
-        <Button type="primary" @click="handleSubmit('formCustom')">提交</Button>
-        <Button type="ghost" @click="handleReset('formCustom')" style="margin-left: 8px">重置</Button>
+      <Form-item label="手机号" prop="passwdCheck" class="phone">
+        <Input type="password" v-model="formCustom.passwdCheck"></Input>
       </Form-item>
+      <Form-item label="验证码" prop="passwdCheck">
+        <Input type="password" v-model="formCustom.passwdCheck"></Input>
+      </Form-item>
+      <Button type="primary" class="send">发送验证码</Button>
+      <Checkbox v-model="single" class="read">我已阅读并接受voter服务条款</Checkbox>
+      <Form-item>
+        <Button type="primary" @click="handleSubmit('formCustom')">创建用户</Button>
+      </Form-item>
+      <a class="havenumber">已有帐号，立即登录</a>
     </Form>
-
+    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -64,7 +72,8 @@
           passwdCheck: [
             {validator: validatePassCheck, trigger: 'blur'}
           ]
-        }
+        },
+        single: false
       }
     },
     methods: {
@@ -76,9 +85,6 @@
             this.$Message.error('表单验证失败!')
           }
         })
-      },
-      handleReset (name) {
-        this.$refs[name].resetFields()
       }
     }
   }
@@ -89,8 +95,14 @@
     margin 0 auto
     padding-top 100px
     width:700px;
-    height:350px;
+    height:500px;
     background:#f5f7f9;
     border:2px solid #d7dde4;
+    margin-bottom:30px;
+    padding-right:50px;
   }
+  .phone{width:500px;}
+  .send{position:relative;bottom:114px;left:250px;margin-left:200px;}
+  .havenumber{color:red;position:relative;left:40px;bottom:10px;}
+  .read{color:red;position:relative;right:110px;}
 </style>

@@ -79,6 +79,86 @@
         </div>
       </Card>
       </Col>
+      <a @click="all=true" v-if="!all" class="all">显示全部</a>
+      <a @click="all=false" v-if="all" class="stop">收起全部</a>
+      <Col span="8" class="col" v-if="all">
+      <Card :bordered="true">
+        <div>
+          <img src="./icon2.png" class="icon">
+          <img src="./finished.png" class="ongoing">
+          <div class="button">
+            <Button @click="modal1 = true">查看</Button>
+            <Button>编辑</Button>
+            <Button @click="modal3 = true">删除</Button>
+          </div>
+        </div>
+      </Card>
+      </Col>
+      <Col span="8" class="col" v-if="all">
+      <Card :bordered="true">
+        <div>
+          <img src="./icon2.png" class="icon">
+          <img src="./finished.png" class="ongoing">
+          <div class="button">
+            <Button @click="modal1 = true">查看</Button>
+            <Button>编辑</Button>
+            <Button @click="modal3 = true">删除</Button>
+          </div>
+        </div>
+      </Card>
+      </Col>
+      <Col span="8" class="col" v-if="all">
+      <Card :bordered="true">
+        <div>
+          <img src="./icon2.png" class="icon">
+          <img src="./finished.png" class="ongoing">
+          <div class="button">
+            <Button @click="modal1 = true">查看</Button>
+            <Button>编辑</Button>
+            <Button @click="modal3 = true">删除</Button>
+          </div>
+        </div>
+      </Card>
+      </Col>
+      <Col span="8" class="col" v-if="all">
+      <Card :bordered="true">
+        <div>
+          <img src="./icon2.png" class="icon">
+          <img src="./finished.png" class="ongoing">
+          <div class="button">
+            <Button @click="modal1 = true">查看</Button>
+            <Button>编辑</Button>
+            <Button @click="modal3 = true">删除</Button>
+          </div>
+        </div>
+      </Card>
+      </Col>
+      <Col span="8" class="col" v-if="all">
+      <Card :bordered="true">
+        <div>
+          <img src="./icon2.png" class="icon">
+          <img src="./finished.png" class="ongoing">
+          <div class="button">
+            <Button @click="modal1 = true">查看</Button>
+            <Button>编辑</Button>
+            <Button @click="modal3 = true">删除</Button>
+          </div>
+        </div>
+      </Card>
+      </Col>
+      <Col span="8" class="col" v-if="all">
+      <Card :bordered="true">
+        <div>
+          <img src="./icon2.png" class="icon">
+          <img src="./finished.png" class="ongoing">
+          <div class="button">
+            <Button @click="modal1 = true">查看</Button>
+            <Button>编辑</Button>
+            <Button @click="modal3 = true">删除</Button>
+          </div>
+        </div>
+      </Card>
+      </Col>
     </Row>
     <Modal
       v-model="modal1" title="投票题目">
@@ -104,7 +184,8 @@
     data () {
       return {
         modal1: false,
-        modal3: false
+        modal3: false,
+        all:false
       }
     }
   }
@@ -120,4 +201,6 @@
   .button{margin-top:16px;}
   .img{width:100px;height:100px;}
   .font{color:red;position:relative;bottom:46px;}
+  .all{position:relative;left:600px;top:30px;}
+  .stop{position:relative;left:200px;top:30px;}
 </style>
